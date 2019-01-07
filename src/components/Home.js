@@ -23,26 +23,26 @@ class Home extends Component {
     let {projectList}  = this.props;
     projectList = (typeof(projectList)==='undefined')?[]:projectList;
 
-    //  projectList = db.project;
+    projectList = db.project;
     let stList = db.student;
     let hostPre = conf.host + "img/";
 
 
-    console.log(projectList)
+    //console.log('project list: ' + projectList)
 
     return (
       <div className="g-home">
         <div className="m-cnt">
           <div className="m-cur">
             <div className="m-title">
-              AI英语面试系统 
+              AI英語インタビューシステム
             </div>
             
             <div className="m-desc">
               <span>React && Redux 框架</span>
-              <span>Tensorflow 深度学习算法</span>
+              <span>Tensorflow ディープラーニング アルゴリズム</span>
               <span>Google Word2Vex 算法</span>
-              <span>讯飞语音识别引擎</span>
+              <span>XUNFEI音声認識システム</span>
             </div>
             <div className="m-pic">
               <img src={sysImg} alt=""/>
@@ -63,19 +63,19 @@ class Home extends Component {
           <div className="m-mooc">
             <div className="m-mooc-item">
               <img src={cImg} alt=""/>
-              <span>C 程 序 设 计</span>
+              <span>C プログラムデザイン</span>
             </div>
             <div className="m-mooc-item">
               <img src={webImg} alt=""/>
-              <span>Web 程 序 设 计</span>
+              <span>Web プログラムデザイン</span>
             </div>
             <div className="m-mooc-item">
               <img src={cloudImg} alt=""/>
-              <span>云 计 算 技 术</span>
+              <span>クラウドコンピューティング技術</span>
             </div>
             <div className="m-mooc-item">
               <img src={reactImg} alt=""/>
-              <span>任务驱动式前端程序设计</span>
+              <span>タスク駆動型フロントエンドプログラミング</span>
             </div>
           </div>
 

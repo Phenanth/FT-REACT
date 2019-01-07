@@ -20,6 +20,8 @@ class Project extends Component {
 
   showDetail =(e)=> {
     let pid = $(e.currentTarget).data('id')
+    console.log($(e.currentTarget).data())
+    console.log(pid)
     this.props.getProjectDetail(pid);
     this.setState({show: true})
   }
@@ -54,10 +56,12 @@ class Project extends Component {
     let pm = { name:null,pname:null,date:null,desc:null,type:null,plat:null,tech:null}
     let { show } = this.state;
     let { projectList,projectDetail,loading } = this.props;
-    projectList = (typeof(projectList)==='undefined')?[]:projectList;
+    // projectList = (typeof(projectList)==='undefined')?[]:projectList;
+    projectList = db.project;
     projectDetail = (typeof(projectDetail)==='undefined')?pm:projectDetail;
     projectDetail.techList = (projectDetail.tech!==null)?projectDetail.tech.split('/'):[];
     let ret = this.getProject(projectList);
+    console.log(ret)
 
     return (
       <div className="g-proj">

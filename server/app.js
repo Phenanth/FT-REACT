@@ -30,12 +30,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', router);
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
-
 
 var marked = require('marked');
 marked.setOptions({
@@ -155,7 +152,8 @@ router.get('/getProjectList', function(req, res, next) {
 router.get('/getProjectDetail', function(req, res, next) {
   let params = url.parse(req.url, true).query;
   let pid = params.pid;
-  let descFilename = `${__dirname}/project/${pid}/desc.md`;
+  // 改为日文版说明
+  let descFilename = `${__dirname}/project/${pid}/desc-jp.md`;
   let markData = fs.readFileSync(descFilename,'utf-8');
   let htmlData = marked(markData);
   let pname = pid.split('#')[1];
@@ -251,12 +249,6 @@ router.get('/getCount', function(req, res, next) {
     res.send(JSON.stringify( count ));
   });
 });
-
-
-
-
-
-
 
 
 

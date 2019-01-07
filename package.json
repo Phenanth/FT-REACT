@@ -2,9 +2,11 @@
   "name": "rshweb",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "antd": "^3.11.6",
     "axios": "^0.18.0",
+    "cookie-parser": "^1.4.3",
     "jquery": "^3.3.1",
     "less": "^3.9.0",
     "moment": "^2.23.0",
@@ -17,7 +19,7 @@
     "redux-promise": "^0.6.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3001&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
